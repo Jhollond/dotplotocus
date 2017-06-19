@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dotplotocus</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        iframe {
+            overflow-y: hidden;
+            border-color: black;
+        }
+        .codeBox {
+            width: 100%;
+            max-width: 680px;
+        }
+        .code {
+            font-size: 16px;
+            font-family: 'Inconsolata', monospace;
+        }
+        .theBigOleInput {
+            padding-left: 16px;
+            white-space: pre-line;
+        }
+        .forURL {
+            width: 100px;
+            height: 33px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<iframe></iframe>
+<div class="codeBox">
+    <div class="code">formula(i)<br>{</div>
+    <div id="theBigOleInput" contenteditable=true class="code theBigOleInput">
+
+    </div>
+    <div class="code">}</div>
+
+    <script src="./index.js"></script>
+    <button onClick="run()">run</button>
+    <input type="checkbox" id="saveToURLCheck">autosave</input>
+    <button onClick="toURL()">send to URL</button>
+    <button onClick="window.location.hash = ''">clear URL</button>
+    <button onClick="getURL()">get URL</button>
+    <button onClick="getFormula()">get Formula</button>
+    <input onClick="this.setSelectionRange(0, this.value.length)" class="forURL" id="forURL"></input>
+</div>
+</body>
